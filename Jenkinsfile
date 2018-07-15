@@ -22,7 +22,6 @@ pipeline  {
         }
           sh 'docker push fperezromero/app:stable'
         }
-      }
     }//fin stage Push register
   }//fin stages
 }//fin pipeline
