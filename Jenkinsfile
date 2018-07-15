@@ -16,7 +16,7 @@ pipeline  {
     }//fin stage Test
     stage('Push Resgister')  {
       steps {
-        withCredentials([usernamePassword(credentialsId: '0fcf4b93-7ed4-4e9b-ae8b-7f7d0f72060e', passwordVariable: 'passwd', usernameVariable: 'user')]) {
+        withDockerRegistry(credentialsId: '0fcf4b93-7ed4-4e9b-ae8b-7f7d0f72060e', url: 'https://hub.docker.com/') {
           sh 'docker tag app:test fperezromero/app:stable'
           sh 'docker push fperezromero/app:stable'
         }
