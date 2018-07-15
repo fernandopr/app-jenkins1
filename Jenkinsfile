@@ -18,7 +18,7 @@ pipeline  {
       steps {
         sh 'docker tag app:test fperezromero/app:stable'
         withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'pass', usernameVariable: 'user')]) {
-          sh 'docker login -u ${user} -p ${pass}'
+          sh 'docker login -u fperezromero -p ${pass}'
         }
           sh 'docker push fperezromero/app:stable'
         }
